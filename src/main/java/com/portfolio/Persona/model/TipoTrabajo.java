@@ -26,7 +26,7 @@ public class TipoTrabajo {
 
     @Override
     public String toString(){
-        return "TipoTrabajo{" +
+        return "TipoTrabajoRepository{" +
                 "id=" + id +
                 ", nombre='" + nombreTipo + '\'' +
                 '}';

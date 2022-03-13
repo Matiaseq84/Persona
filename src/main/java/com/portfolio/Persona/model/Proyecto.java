@@ -49,7 +49,7 @@ public class Proyecto {
 
     @Override
     public String toString(){
-        return "Proyecto{" +
+        return "ProyectoService{" +
                 "id=" + id +
                 ", fecha='" + fecha + '\'' +
                 ", descripcion='" + descripcion + '\'' +

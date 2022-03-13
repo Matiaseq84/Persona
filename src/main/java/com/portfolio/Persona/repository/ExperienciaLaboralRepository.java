@@ -5,4 +5,5 @@ import com.portfolio.Persona.model.Persona;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ExperienciaLaboralRepository extends JpaRepository<ExperienciaLaboral,Long> {
+    void deleteExperienciaLaboralById(Long id);
 }
