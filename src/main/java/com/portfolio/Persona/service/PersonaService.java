@@ -6,9 +6,11 @@ import com.portfolio.Persona.repository.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.List;
 
+@Transactional
 @Service
 public class PersonaService {
     private final PersonaRepository personaRepo;

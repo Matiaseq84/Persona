@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/experiencia")
 public class ExperienciaLaboralController {
@@ -14,6 +16,12 @@ public class ExperienciaLaboralController {
 
     public ExperienciaLaboralController(ExperienciaLaboralService experienciaLaboralService) {
         this.experienciaLaboralService = experienciaLaboralService;
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<ExperienciaLaboral>> getAllExperiencias() {
+        List<ExperienciaLaboral> experiencias = experienciaLaboralService.findAllExperiencias();
+        return new ResponseEntity<>(experiencias, HttpStatus.OK);
     }
 
     @PostMapping("/add")

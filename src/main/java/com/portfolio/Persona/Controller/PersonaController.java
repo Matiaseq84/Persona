@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
@@ -41,6 +42,7 @@ public class PersonaController {
         Persona updatePersona = personaService.updatePersona(persona);
         return new ResponseEntity<>(updatePersona, HttpStatus.OK);
     }
+
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deletePersona (@PathVariable("id") Long id) {

@@ -11,23 +11,34 @@ import java.util.Date;
 public class ExperienciaLaboral implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
     private String nombreEmpresa;
     private boolean esTrabajoActual;
-    private Date fechaInicio;
-    private Date fechaFin;
+    private String puesto;
+    private int fechaInicio;
+    private int fechaFin;
     private String descripcion;
 
     public ExperienciaLaboral(){
 
     }
-    public ExperienciaLaboral(String nombreEmpresa, boolean esTrabajoActual, Date fechaInicio, Date fechaFin, String descripcion){
+    public ExperienciaLaboral(String nombreEmpresa, boolean esTrabajoActual, String puesto, int fechaInicio, int fechaFin, String descripcion){
         this.nombreEmpresa = nombreEmpresa;
         this.esTrabajoActual = esTrabajoActual;
+        this.puesto = puesto;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.descripcion = descripcion;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId() {
+        this.id = this.id;
     }
 
     public String getNombreEmpresa() {
@@ -46,13 +57,25 @@ public class ExperienciaLaboral implements Serializable {
         this.esTrabajoActual = esTrabajoActual;
     }
 
-    public Date getFechaInicio(){
+    public String getPuesto() {
+        return puesto;
+    }
+
+    public void setPuesto(){
+        this.puesto = puesto;
+    }
+
+    public int getFechaInicio(){
         return fechaInicio;
     }
 
-    public Date getFechaFin(){
+    public void setFechaInicio() {this.fechaInicio = fechaInicio;}
+
+    public int getFechaFin(){
         return fechaFin;
     }
+
+    public void setFechaFin() {this.fechaFin = fechaFin;}
 
     public String getDescripcion(){
         return descripcion;
@@ -68,9 +91,11 @@ public class ExperienciaLaboral implements Serializable {
                 "id=" + id +
                 ", nombre='" + nombreEmpresa + '\'' +
                 ", trabajo actual='" + esTrabajoActual  + '\'' +
+                ", puesto='" + puesto  + '\'' +
                 ", fecha inicio='" + fechaInicio + '\'' +
                 ", fecha fin='" + fechaFin + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 '}';
     }
+
 }
