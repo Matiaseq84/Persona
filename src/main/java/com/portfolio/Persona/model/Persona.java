@@ -1,8 +1,13 @@
 package com.portfolio.Persona.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 @Entity
@@ -94,9 +99,10 @@ public class Persona implements Serializable {
                 '}';
      }
 
+
      @OneToMany(targetEntity = ExperienciaLaboral.class, cascade = CascadeType.ALL)
      @JoinColumn(name = "pe_fk", referencedColumnName = "id")
-     private List<ExperienciaLaboral> empleos;
+     private Set<ExperienciaLaboral> empleos = new HashSet<>();
 
     @OneToMany(targetEntity = Educacion.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "pe_fk", referencedColumnName = "id")

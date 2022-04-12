@@ -7,6 +7,10 @@ import com.portfolio.Persona.repository.ProyectoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+import java.util.List;
+
+@Transactional
 @Service
 public class ProyectoService {
     private final ProyectoRepository proyectoRepo;
@@ -18,6 +22,10 @@ public class ProyectoService {
 
     public Proyecto addProyecto(Proyecto proyecto) {
         return proyectoRepo.save(proyecto);
+    }
+
+    public List<Proyecto> findAllProyectos(){
+        return proyectoRepo.findAll();
     }
 
     public Proyecto updateProyecto(Proyecto proyecto){

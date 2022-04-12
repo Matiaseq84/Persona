@@ -4,22 +4,31 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity
-public class HSSkill {
+public class HSSkill implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nombreSkill;
     private Character tipoSkill;
-    private Double porcentaje;
+    private int porcentaje;
 
     public HSSkill(){};
 
-    public HSSkill(String nombreSkill, Character tipoSkill, Double porcentaje){
+    public HSSkill(String nombreSkill, Character tipoSkill, int porcentaje){
         this.nombreSkill = nombreSkill;
         this.tipoSkill = tipoSkill;
         this.porcentaje = porcentaje;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId() {
+        this.id = this.id;
     }
 
     public String getNombreSkill(){
@@ -38,7 +47,7 @@ public class HSSkill {
         this.tipoSkill = tipoSkill;
     }
 
-    public Double getPorcentaje(){
+    public int getPorcentaje(){
         return porcentaje;
     }
 

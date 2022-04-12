@@ -4,10 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class Educacion {
+public class Educacion implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,19 +16,28 @@ public class Educacion {
     private String instituto;
     private String carrera;
     private boolean estado;
-    private Date fechaInicio;
-    private Date fechaFin;
+    private int fechaInicio;
+    private int fechaFin;
     private String urlLogo;
 
     public Educacion(){};
 
-    public Educacion(String instituto, String carrera, boolean estado, Date fechaInicio, Date fechaFin, String urlLogo) {
+    public Educacion(String instituto, String carrera, boolean estado, int fechaInicio, int fechaFin, String urlLogo) {
         this.instituto = instituto;
         this.carrera = carrera;
         this.estado = estado;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.urlLogo = urlLogo;
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId() {
+        this.id = this.id;
     }
 
     public String getInstituto() {
@@ -54,7 +64,7 @@ public class Educacion {
         this.estado = estado;
     }
 
-    public Date getFechaInicio(){
+    public int getFechaInicio(){
         return fechaInicio;
     }
 
@@ -62,7 +72,7 @@ public class Educacion {
         this.fechaInicio = fechaInicio;
     }
 
-    public Date getFechaFin(){
+    public int getFechaFin(){
         return fechaFin;
     }
 

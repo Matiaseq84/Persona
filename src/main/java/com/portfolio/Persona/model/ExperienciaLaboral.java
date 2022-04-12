@@ -1,9 +1,9 @@
 package com.portfolio.Persona.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -21,6 +21,8 @@ public class ExperienciaLaboral implements Serializable {
     private int fechaFin;
     private String descripcion;
 
+
+
     public ExperienciaLaboral(){
 
     }
@@ -31,6 +33,8 @@ public class ExperienciaLaboral implements Serializable {
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.descripcion = descripcion;
+
+
     }
 
     public Long getId() {
@@ -97,5 +101,9 @@ public class ExperienciaLaboral implements Serializable {
                 ", descripcion='" + descripcion + '\'' +
                 '}';
     }
+
+
+
+
 
 }

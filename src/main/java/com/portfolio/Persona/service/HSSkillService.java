@@ -7,6 +7,11 @@ import com.portfolio.Persona.repository.HSSkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+import javax.transaction.Transactional;
+import java.util.List;
+
+@Transactional
 @Service
 public class HSSkillService {
     private final HSSkillRepository hSSkillRepo;
@@ -18,6 +23,10 @@ public class HSSkillService {
 
     public HSSkill addHSSkill(HSSkill hsSkill) {
         return hSSkillRepo.save(hsSkill);
+    }
+
+    public List<HSSkill> findAllHsSkill(){
+        return hSSkillRepo.findAll();
     }
 
     public HSSkill updateHSSkill(HSSkill hsSkill){

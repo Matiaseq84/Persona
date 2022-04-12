@@ -20,7 +20,7 @@ public class PersonaController {
         this.personaService = personaService;
     }
 
-    @PreAuthorize("hasRole('USER')")
+
     @GetMapping("/all")
     public ResponseEntity<List<Persona>> getAllPersonas() {
         List<Persona> personas = personaService.findAllPersonas();
