@@ -23,6 +23,8 @@ public class UserPrincipal implements UserDetails {
         this.authorities = authorities;
     }
 
+    public UserPrincipal() {}
+
     public static UserPrincipal build(User user) {
         List<GrantedAuthority> authorities =
                 user.getRoles().stream().map(rol -> new SimpleGrantedAuthority(rol
@@ -35,9 +37,17 @@ public class UserPrincipal implements UserDetails {
         return authorities;
     }
 
+    public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
+        this.authorities = authorities;
+    }
+
     @Override
     public String getPassword() {
         return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
@@ -69,7 +79,17 @@ public class UserPrincipal implements UserDetails {
         return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getEmail() {
         return email;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
 }
