@@ -13,7 +13,7 @@ import java.util.Arrays;
 import static org.aspectj.weaver.tools.cache.SimpleCacheFactory.path;
 
 @SpringBootApplication
-public class PersonaApplication extends SpringBootServletInitializer {
+public class PersonaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PersonaApplication.class, args);
