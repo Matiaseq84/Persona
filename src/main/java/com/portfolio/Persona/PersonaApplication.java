@@ -1,5 +1,6 @@
 package com.portfolio.Persona;
 
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.web.filter.CorsFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,13 +13,13 @@ import java.util.Arrays;
 import static org.aspectj.weaver.tools.cache.SimpleCacheFactory.path;
 
 @SpringBootApplication
-public class PersonaApplication {
+public class PersonaApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PersonaApplication.class, args);
 	}
 
-	@Bean
+	/*@Bean
 	public CorsFilter corsFilter() {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
@@ -33,6 +34,6 @@ public class PersonaApplication {
 		UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
 		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 		return new CorsFilter(urlBasedCorsConfigurationSource);
-	}
+	}*/
 
 }
