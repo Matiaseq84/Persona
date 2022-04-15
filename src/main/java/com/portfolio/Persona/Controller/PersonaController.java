@@ -41,7 +41,7 @@ public class PersonaController {
         return new ResponseEntity<>(newPersona, HttpStatus.CREATED);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update")
     public ResponseEntity<Persona> updatePersona (@RequestBody Persona persona) {
         Persona updatePersona = personaService.updatePersona(persona);
