@@ -26,21 +26,21 @@ public class HSSkillController {
         return new ResponseEntity<>(hSSkills, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/add")
     public ResponseEntity<HSSkill> addHSSkill (@RequestBody HSSkill hSSkill) {
         HSSkill newHSSkill = hsSkillService.addHSSkill(hSSkill);
         return new ResponseEntity<>(newHSSkill, HttpStatus.CREATED);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update")
     public ResponseEntity<HSSkill> updateHSSkill (@RequestBody HSSkill hSSkill) {
         HSSkill updateHSSkill = hsSkillService.updateHSSkill(hSSkill);
         return new ResponseEntity<>(updateHSSkill, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteHSSkill(@PathVariable("id") Long id) {
         hsSkillService.deleteHSSkill(id);

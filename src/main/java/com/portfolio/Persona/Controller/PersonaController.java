@@ -34,7 +34,7 @@ public class PersonaController {
         return new ResponseEntity<>(persona, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/add")
     public ResponseEntity<Persona> addPersona (@RequestBody Persona persona) {
         Persona newPersona = personaService.addPersona(persona);
@@ -48,7 +48,7 @@ public class PersonaController {
         return new ResponseEntity<>(updatePersona, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deletePersona (@PathVariable("id") Long id) {
         personaService.deletePersona(id);

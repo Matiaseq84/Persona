@@ -26,21 +26,21 @@ public class ExperienciaLaboralController {
         return new ResponseEntity<>(experiencias, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/add")
     public ResponseEntity<ExperienciaLaboral> addExperienciaLaboral (@RequestBody ExperienciaLaboral experienciaLaboral) {
         ExperienciaLaboral newExperienciaLaboral = experienciaLaboralService.addExperienciaLaboral(experienciaLaboral);
         return new ResponseEntity<>(newExperienciaLaboral, HttpStatus.CREATED);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update")
     public ResponseEntity<ExperienciaLaboral> updatePersona (@RequestBody ExperienciaLaboral experienciaLaboral) {
         ExperienciaLaboral updateExperienciaLaboral = experienciaLaboralService.updateExperienciaLaboral(experienciaLaboral);
         return new ResponseEntity<>(updateExperienciaLaboral, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteExperienciaLaboral(@PathVariable("id") Long id) {
         experienciaLaboralService.deleteExperienciaLaboral(id);
